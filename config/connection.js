@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
-require("dotenv").config();
+require("dotenv").config('/.env');
 
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
