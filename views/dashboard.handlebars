@@ -1,0 +1,28 @@
+{{!-- todo: html input area for a new blog post title --}}
+{{!-- html input area for new blog post content --}}
+{{!-- button to submit new post --}}
+
+<div>
+    <h1>Dashboard</h1>
+    <h2>My Posts</h2>
+    <div>
+        {{#each posts}}
+            <div>
+                <h3>{{title}}</h3>
+                <p>{{content}}</p>
+                <button class="edit-post">Edit</button>
+                <button class="delete-post">Delete</button>
+            </div>
+        {{/each}}
+    </div>
+    <div>
+        <h2>Add a Post</h2>
+        <form>
+            <label for="post-title">Title</label>
+            <input type="text" name="post-title" id="post-title">
+            <label for="post-content">Content</label>
+            <textarea name="post-content" id="post-content" cols="30" rows="10"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
