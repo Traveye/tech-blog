@@ -1,4 +1,4 @@
-const Sequalize = require('sequelize');
+const sequelize = require('sequelize');
 const { Model, DataTypes } = require('sequelize');
 
 class Comment extends Model {}
@@ -23,6 +23,7 @@ Comment.init(
             references: {
                 model: 'user',
                 key: 'id',
+    
             },
         },
         post_id: {
@@ -37,7 +38,14 @@ Comment.init(
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
-    }
+    },
+    {
+        sequelize,
+        timestamps: true,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'comment',
+      }
 );
 
 module.exports = Comment;
