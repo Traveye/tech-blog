@@ -33,6 +33,21 @@ The CMS-style blog site aims to provide a seamless user experience for both firs
 
 ## Implementation
 
+To build this site, I implemented the MVC stragegy. The technolgies used were:
+- bcrypt
+- bulma
+- connect-session-sequelize
+- dotenv
+- express
+- express-handlebars
+- express-session
+- mysql2
+
+Using sequelize, I built out the models with standard tables and auto incremented IDs.
+For the controller, I utilized express.js to build out CRUD routes to intereact with the database. 
+This data was then passed to Handlebars and rendered to the page. 
+
+You can visit the deployed link [here](https://young-harbor-87164.herokuapp.com/)
 
 ## Credits
 N/A
