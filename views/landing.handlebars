@@ -1,0 +1,11 @@
+<div>
+    <h1 style="font-size: 3em;">Posts</h1>
+    <div>
+        {{#each posts}}
+            <div style="margin: 1em">
+                <h3>{{title}}</h3>
+                <p>{{content}}</p>
+                <p>Posted: {{created_at}}</p>
+            </div>
+        {{/each}}
+    </div>
