@@ -14,9 +14,15 @@
         <a href="/" class="navbar-item">Home</a>
       </div>
         <a href="/dashboard" class="navbar-item" style="color: white">DashBoard</a>
+        {{#if loggedIn}}
+        </div>
+        <a href="/login" class="navbar-item" style="color: white" id="logout">LogOut</a>
+      </div>
+        {{else}}
       </div>
         <a href="/login" class="navbar-item" style="color: white">Login</a>
       </div>
+        {{/if}}
 
     </nav>
     <section class="hero is-medium is-link">
@@ -29,5 +35,8 @@
     <section class="section">
       {{{body}}}
     </section>
+    {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
   </body>
 </html>

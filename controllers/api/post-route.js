@@ -1,17 +1,12 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
 
-// route to get all posts that only has the title and date created
+// route to get all posts
 router.get('/', async (req, res) => {
     try {
-        const postData = await Post.findAll({
-        attributes: ['id', 'title', 'created_at'],
-        order: [['created_at', 'DESC']],
-        });
-    
-        const posts = postData.map((post) => post.get({ plain: true }));
-    
-        res.render('landing', { posts, loggedIn: req.session.loggedIn});
+        const postData = await Post.findAll();
+        res.status(200).json(postData);
+
     } catch (err) {
         res.status(500).json(err);
     }
